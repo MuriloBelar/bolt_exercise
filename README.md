@@ -42,6 +42,7 @@ The DBT was not deployed as a standalone container because it was being used loc
 
 To run everything locally:  
 ```bash
+```
 docker-compose up --build
 
 ## DBT
