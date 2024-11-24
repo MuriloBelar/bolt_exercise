@@ -42,9 +42,9 @@ The DBT was not deployed as a standalone container because it was being used loc
 
 To run everything locally:  
 ```bash
-```
-docker-compose up --build
 
+docker-compose up --build
+```
 ## DBT
 
 The DBT project was modeled using the DBT recommendation of having a division in 3 layers (similar to the medallion architecture):
