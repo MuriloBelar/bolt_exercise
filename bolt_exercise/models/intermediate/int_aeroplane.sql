@@ -17,11 +17,7 @@ SELECT
     aeroplane_model.max_seats,
     aeroplane_model.max_weight,
     aeroplane_model.max_distance,
-    aeroplane_model.engine_type,
-    CASE
-        WHEN aeroplane_model.max_seats < 100 THEN 'small'
-        WHEN aeroplane_model.max_seats > 100 THEN  'big'
-    END AS aeroplane_type_size
+    aeroplane_model.engine_type
 FROM aeroplane
 
 LEFT JOIN aeroplane_model
