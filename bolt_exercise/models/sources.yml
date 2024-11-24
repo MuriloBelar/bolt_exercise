@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: exercise
+    database: exercise_db
+    schema: public
+    tables:
+      - name: aeroplane_model
+      - name: aeroplane
+      - name: customer_group
+      - name: customer
+      - name: order
+      - name: trip

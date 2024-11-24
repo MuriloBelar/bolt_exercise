@@ -1,0 +1,11 @@
+bolt_exercise:
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5434
+      user: admin
+      password: admin
+      dbname: exercise_db
+      schema: public
+  target: dev

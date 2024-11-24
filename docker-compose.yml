@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  postgres_metabase:
+    image: postgres:15
+    container_name: postgres_metabase
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: metabase_db
+    ports:
+      - "5433:5432"
+    networks:
+      - app_network
+
+  postgres_exercise:
+    image: postgres:15
+    container_name: postgres_exercise
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: exercise_db
+    ports:
+      - "5434:5432"
+    networks:
+      - app_network
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase_container
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase_db
+      MB_DB_PORT: 5432
+      MB_DB_USER: admin
+      MB_DB_PASS: admin
+      MB_DB_HOST: postgres_metabase
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres_metabase
+    networks:
+      - app_network
+networks:
+  app_network:
+    driver: bridge
